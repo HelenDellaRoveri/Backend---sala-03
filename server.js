@@ -65,3 +65,17 @@ app.put("/editar/:id", (req,res) => {
         usuario
     });
 });
+
+// Delete - deletar usuário
+
+app.delete("deletar/:id", (req, res) => {
+    const id = Number(req.params.id);
+    const index = usuarios.findIndex( u => u.id === id);
+    if(index === -1){
+        return res.status(404).json({
+            mensagem: "Usuário não encontrado"
+        });
+    }
+
+    
+})
